@@ -10,15 +10,16 @@ import './App.css';
 class App extends Component {
   render() {
     const { user, page, getPhotosAction, tracks, onGetTracks} = this.props
-    return
+    return (
       <div className="App">
         <User name={user.name} />
         <Page photos={page.photos} year={page.year} getPhotos={getPhotosAction} isFetching={page.isFetching} />
         <div>
-          <button onClic={onGetTracks}>Get Tracks</button>
-          <div>{tracks}</div>
+          <button onClick={onGetTracks}>Get Tracks</button>
+          {tracks.load ? <p>Пизда</p> : <p>Хуй</p> }
         </div>
-      </div>;
+      </div>
+    )
   }
 }
 
