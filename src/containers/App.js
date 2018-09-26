@@ -16,7 +16,7 @@ class App extends Component {
         <Page photos={page.photos} year={page.year} getPhotos={getPhotosAction} isFetching={page.isFetching} />
         <div>
           <button onClick={onGetTracks}>Get Tracks</button>
-          {tracks.load ? <p>Пизда</p> : <p>Хуй</p> }
+          {tracks.load ? <p>Хуй</p> : <p>Загрузка...</p> }
         </div>
       </div>
     )
