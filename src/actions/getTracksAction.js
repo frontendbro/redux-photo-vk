@@ -11,27 +11,15 @@ export const getTracks = () => {
         }
       ]
     })
-    setTimeout(() => {
-      dispatch({
-        type: GET_TRACKS_SUCCESS,
-        payload: [
-          {
-            id:111
-          },
-          {
-            id:222
-          },
-          {
-            id:333
-          },
-          {
-            id:444
-          },
-          {
-            id:555
-          },
-        ]
+
+    fetch('https://swapi.co/api/starships')
+      .then(function(response) {
+        response.json().then(function(data) {
+          dispatch({
+            type: GET_TRACKS_SUCCESS,
+            payload: data.results
+          })
+        })
       })
-    }, 2000)
   }
 }

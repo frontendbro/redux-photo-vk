@@ -16,7 +16,10 @@ class App extends Component {
         <Page photos={page.photos} year={page.year} getPhotos={getPhotosAction} isFetching={page.isFetching} />
         <div>
           <button onClick={onGetTracks}>Get Tracks</button>
-          {tracks.load ? <p>Получили данные</p> : <p>Загрузка...</p> }
+
+          {tracks.load ? tracks.apps.map( (item, i) => {
+            return <li key={i}>{item.name}</li>
+          }) : <p>Пусто</p>}
         </div>
       </div>
     )
